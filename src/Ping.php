@@ -39,6 +39,10 @@ class Ping
 		$this->client = new Client([
 			'timeout' => $this->timeout,
 			'allow_redirects' => $this->allowRedirects,
+            'curl' => [
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false
+            ],
 		]);
 	}
 
